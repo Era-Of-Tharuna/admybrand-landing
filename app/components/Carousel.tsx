@@ -6,7 +6,9 @@ export function Carousel({ items }: { items: { avatar: string; name: string; com
   return (
     <div className="relative flex flex-col items-center">
       <div className="w-20 h-20 mx-auto rounded-full bg-primary/20 mb-4 overflow-hidden">
-        <img src={items[idx].avatar} alt={items[idx].name} className="w-full h-full object-cover" />
+        {items[idx].avatar ? (
+          <img src={items[idx].avatar} alt={items[idx].name} className="w-full h-full object-cover" />
+        ) : null}
       </div>
       <p className="italic mb-2">"{items[idx].quote}"</p>
       <div className="font-semibold">{items[idx].name}</div>
